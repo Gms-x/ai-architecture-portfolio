@@ -1,0 +1,84 @@
+<mxfile host="Electron">
+  <diagram id="governance" name="Page 2 — Architecture">
+    <mxGraphModel dx="1290" dy="833" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;strokeColor=none;fontSize=23;fontStyle=1;align=left;" value="Marketing Automation with AI &amp; Agents | Governed pilot architecture" vertex="1">
+          <mxGeometry height="48" width="1090" x="35" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;strokeColor=none;fontSize=13;align=left;" value="PAGE 2 OF 2 • Proposed decisions • P1 Privacy / P2 Human accountability / P3 Evidence / P4 Bounded operations" vertex="1">
+          <mxGeometry height="35" width="1090" x="35" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f8fafc;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;verticalAlign=top;align=left;fontSize=12;fontStyle=1;dashed=1;" value="CONTROLLED APPLICATION &amp; DATA BOUNDARY" vertex="1">
+          <mxGeometry height="545" width="810" x="30" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="crm" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;" value="CRM + consent ledger&#xa;Identities stay here&#xa;P1" vertex="1">
+          <mxGeometry height="85" width="200" x="55" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="min" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eaf2f8;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;" value="Data policy gate&#xa;Minimise / pseudonymise&#xa;P1" vertex="1">
+          <mxGeometry height="85" width="210" x="305" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="agent" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eaf2f8;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;" value="Batch agent orchestrator&#xa;Drafts + segment proposals&#xa;No delivery credentials&#xa;ADR-03 / P2, P4" vertex="1">
+          <mxGeometry height="110" width="210" x="305" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="kb" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;" value="PostgreSQL + pgvector&#xa;Approved brand knowledge&#xa;Tenant / role filters&#xa;ADR-02 / P1, P3" vertex="1">
+          <mxGeometry height="110" width="200" x="55" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eaf2f8;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;" value="LLM gateway / adapter&#xa;Redact + block sensitive data&#xa;Token caps / bounded retries&#xa;ADR-01 / P1, P4" vertex="1">
+          <mxGeometry height="110" width="220" x="590" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="llm" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff3dc;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;" value="MANAGED PROVIDER&#xa;LLM API&#xa;Approved location + terms&#xa;No training on our data&#xa;ADR-01" vertex="1">
+          <mxGeometry height="110" width="245" x="875" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="human" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eaf2f8;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;" value="Human approval&#xa;Bind content + audience version&#xa;Edits require reapproval&#xa;P2" vertex="1">
+          <mxGeometry height="105" width="210" x="305" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="send" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eaf2f8;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;" value="Approved queue + send gate&#xa;Live consent / suppression&#xa;Eligibility / frequency / dedupe&#xa;Fail closed • P2, P4" vertex="1">
+          <mxGeometry height="105" width="220" x="590" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="channel" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;" value="Delivery platform&#xa;Email / SMS / ads&#xa;Customer-facing action" vertex="1">
+          <mxGeometry height="105" width="245" x="875" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="controls" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#edf3ed;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;fontSize=14;" value="CROSS-CUTTING CONTROLS | P3, P4&#xa;Versioned prompts / models • Redacted audit trail • Evals • Campaign / monthly budget stops • Kill switch&#xa;ARB release gate: Security + Privacy + AI + Marketing + FinOps evidence; unresolved checks block launch" vertex="1">
+          <mxGeometry height="90" width="1065" x="55" y="695" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#64748b;fontColor=#172b4d;fontFamily=Helvetica;fontSize=14;spacing=10;strokeColor=none;fontSize=11;align=left;" value="" vertex="1">
+          <mxGeometry height="25" width="1065" x="55" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="crm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontFamily=Helvetica;fontSize=12;labelBackgroundColor=#ffffff;" target="min" value="Necessary attributes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="min" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontFamily=Helvetica;fontSize=12;labelBackgroundColor=#ffffff;" target="agent" value="Permitted context">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="kb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontFamily=Helvetica;fontSize=12;labelBackgroundColor=#ffffff;" target="agent" value="Grounded retrieval">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="agent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontFamily=Helvetica;fontSize=12;labelBackgroundColor=#ffffff;startArrow=block;" target="gateway" value="Prompt / response">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="gateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontFamily=Helvetica;fontSize=12;labelBackgroundColor=#ffffff;startArrow=block;" target="llm" value="Filtered request / response">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="agent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontFamily=Helvetica;fontSize=12;labelBackgroundColor=#ffffff;" target="human" value="Draft + evidence">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="human" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontFamily=Helvetica;fontSize=12;labelBackgroundColor=#ffffff;" target="send" value="Approved version only">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="send" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontFamily=Helvetica;fontSize=12;labelBackgroundColor=#ffffff;" target="channel" value="Allowed sends">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="crm" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;dashed=1;fontSize=12;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=1;" target="send" value="Live policy lookup">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="155" y="645" />
+              <mxPoint x="700" y="645" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
